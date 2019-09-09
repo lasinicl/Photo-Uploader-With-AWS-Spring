@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Photo Upload Application</title>
+      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	  <!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+    <body>
+		<div th:unless="${#vars['flash.message']} == null" th:text="${#vars['flash.message']}"></div>
+      		<div class="col-sm-offset-4 col-sm-12" style="color:blue;">
+      			<h2>UPLOAD PHOTO TO AMAZON S3</h2>
+      		</div>
+			<form class="form-horizontal" enctype="multipart/form-data" action="/upload" method="post">
+		    	<div class="form-group">
+		        	<div class="col-sm-offset-5 col-sm-12">
+		            	<label class="file-upload btn">
+		                	<input type="file" name="file" id="file" accept="image/*"/>
+		            	</label>
+						
+		        	</div>
+		    	</div>
+		    	<div class="form-group">
+		    		<div class="col-sm-offset-6 col-sm-10" style="padding-left: 0px !important;">
+		    			<input class="btn btn-success" type="submit" name="commit" value="Upload Photo"/>
+		    		</div>
+		    	</div>
+			</form>
+ 
+   
+  	</body>
+</html>
